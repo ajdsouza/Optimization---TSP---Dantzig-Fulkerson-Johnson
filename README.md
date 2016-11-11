@@ -1,1 +1,5 @@
-# isye6669-project2
+Travelling Salesman Problem
+
+A Dantzig-Fulkerson-Johnson formulation for the solution of the TSP
+
+Linear Optimization with Constraint Generation
