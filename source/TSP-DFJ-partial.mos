@@ -2,8 +2,9 @@ model ModelName
 uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 uses "mmsystem" ! include package to operating systems
 
+forward function is_closed_tour (subCities:array(range) of integer, subTourSize:integer) : real
 
-    
+
 N := 48  ! number of cities
 
 declarations
@@ -17,6 +18,26 @@ declarations
 	numSubtourCities : integer					! number of cities on a generated subtour
 	SubtourCities : array(Cities) of integer	! SubtourCities(i)=1 means city i is on the subtour 
 	subtourCtr : dynamic array(ind) of linctr   ! dynamic array of subtour elimination constraints
+	TotalDist : linctr    						! objective constraint
+	
+	! constraint for only one path out of each city
+	leavingConstraint: array(Cities)  of linctr      
+	! constraint for only one path into of each city
+	enteringConstraint: array(Cities)  of linctr     
+	! constraints for preventing one city subtour
+	oneCitySubTourConstraint: array(Cities)  of linctr     
+	! constraints for preventing two city subtour
+	twoCitySubTourConstraint: dynamic array(range)  of linctr     
+	! constraints for preventing three city subtour
+	threeCitySubTourConstraint: dynamic array(range)  of linctr  
+	! constraints for preventing four city subtour
+	fourCitySubTourConstraint: dynamic array(range)  of linctr  
+	
+	! constraint for a TSP tour to have N edges
+	!tspConstr: linctr
+	
+	! counter for dynamic arrays
+	cons: integer             
 end-declarations
 
 ! initialization part is given 
@@ -25,58 +46,131 @@ initializations from "US48.dat"
 end-initializations
 
 
-! compute dist(i,j) the distance between each pair of cities using (x,y) coordinates of the cities, which are in the array coord
+! compute dist(i,j) the distance between each pair of cities using (x,y) 
+! coordinates of the cities, which are in the array coord
 ! you may need square root function sqrt()
 !!!!!!!!!!!!!!! fill in your code here !!!!!!!!!!!!!!!!!!!! 
-
+forall ( i in Cities ) do
+	forall ( j in Cities ) do
+		if ( i = j) then
+			dist(i,j) := 0.0
+		else
+			dist(i,j) := sqrt( (coord(i,2)-coord(j,2))^2 + (coord(i,3)-coord(j,3))^2 )
+			dist(j,i) := dist(i,j)
+		end-if
+	end-do
+end-do
 
 
 
 
 !!!!!!!!!!!!! objective: total distance of a tour
 !!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
-TotalDist := 
+TotalDist := sum(i in Cities, j in Cities ) x(i,j)*dist(i,j)
 
 
 !!!!!!!!!! write constraint: x(i,j) is binary !!!!!!!!!!!!!!!!
 !!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
+forall(i in Cities, j in Cities ) do
+	x(i,j) is_binary
+end-do
 
 
-
+!tspConstr := sum(i in Cities, j in Cities ) x(i,j) = 48
 
 
 !!!!!!!!!!! write assignment constraints: in and out constraints for each city !!!!!!!!!!!!!!!!!!!
 !!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
+forall(i in Cities) do
+ leavingConstraint(i) := sum ( j in Cities ) x(i,j) = 1 
+end-do
 
-
+forall(j in Cities) do
+ enteringConstraint(j) := sum ( i in Cities ) x(i,j) = 1 
+end-do
 
 
 
 
 !!!!!!!!!! write 1-city subtour elimination constraints here !!!!!!!!!!!!!!!!!
 !!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
-
+! generate the 48c2 combinations and add the constraint for each
+! combination
+forall(i in Cities) do
+ ! add the no closed loop constraint for each 1 city combination
+ oneCitySubTourConstraint(i) := x(i,i) <= 0 
+end-do
 
 
 
 
 !!!!!!!!!!! write 2-city subtour elimination constraints here !!!!!!!!!!!!!!!!!!!
 !!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
-
-
+cons := 1
+! generate the 48c2 combinations and add the constraint for each
+! combination
+forall(i in Cities, j in Cities) do
+ 
+  if (i>=j) then
+ 	next
+  end-if
+  
+ create(twoCitySubTourConstraint(cons))
+ 
+ ! add the no closed loop constraint for each 2 city combination
+ twoCitySubTourConstraint(cons) := x(i,j) + x(j,i ) <= 1
+ 
+ cons += 1
+end-do
 
 
 
 !!!!!!!!!! write 3-city subtour elimination constraints here !!!!!!!!!!!!!!
 !!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
-
-
+cons := 1
+! generate the 48c3 combinations and add the constraint for each
+! combination
+forall(i in Cities, j in Cities, k in Cities ) do
+ 
+ if (( i>=j) or ( i>=k) or (j>=k) ) then
+ 	next
+  end-if
+  
+ create(threeCitySubTourConstraint(cons))
+ 
+ ! add the no closed loop constraint for each 3 city combination
+ threeCitySubTourConstraint(cons) :=  x(i,j) + x(i,k ) + x(j,k) +
+ 										x(j,i) + x(k,i ) + x(k,j) <= 2
+ cons += 1
+end-do
 
 
 !!!!!!!!!! write 4-city subtour elimination constraints here !!!!!!!!!!!!!!
 !!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
+cons := 1
 
-
+! generate the 48c4 combinations and add the constraint for each
+! combination
+(!forall(i in Cities, j in Cities, k in Cities, l in Cities ) do
+ 
+ if (( i>=j) or ( i>=k) or (i>=l) or (j>=k) or ( j>=l) or ( k>=l) ) then
+ 	next
+ end-if
+ 
+ 
+ create(fourCitySubTourConstraint(cons))
+ 
+ ! add the no closed loop constraint for each 4 city combination
+ fourCitySubTourConstraint(cons) :=  x(i,j) + x(i,k ) + x(i,l) + 
+  										x(j,i) + x(k,i ) + x(l,i) + 
+  										x(j,k) + x(j,l) +
+  										x(k,j) + x(l,j) +
+  										x(k,l) +
+  										x(l,k) <= 3
+  										
+  cons += 1
+end-do
+!)
 
 
 
@@ -88,6 +182,7 @@ TotalDist :=
 !!!!!!!!!!!!! constraint generation algorithm !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 numSubtour := 0   ! number of added subtour elimination constraints is zero
 flag := 0 ! initalize flag to be 0, so no optimal solution has been found yet
+cnt := 1
 
 repeat 
 	
@@ -95,8 +190,9 @@ repeat
 	minimize(TotalDist)
 	
 	
-	
 	! Output the solution of the restricted master problem
+	writeln("Iteration : ",cnt)
+	cnt +=1
 	writeln("the restricted master problem is solved:")
 	forall (i in Cities, j in Cities) do
 		if abs(getsol(x(i,j))-1)<0.1 then  
@@ -116,14 +212,35 @@ repeat
 	forall (i in Cities) do  ! SubtourCities(i)=1 if city i is on the subtour, initialize all entries to zero
 		SubtourCities(i):=0  ! need to change entries when city i is found on the tour
 	end-do
-	subtourCities(1) := 1  ! City 1 (Atlanta) is always on the subtour
+	SubtourCities(1) := 1  ! City 1 (Atlanta) is always on the subtour
 		
 	! Start the procedure to look for a subtour starting and ending at City 1. The basic algorithm is discussed in the hand-out
 	! Note you need to update SubtourCities for cities that are on the subtour 
 	! You also need to keep track of the number of cities numSubtourCities on the subtour
 	!!!!!!!!! fill in your code here !!!!!!!!!!!!!!!
 	
-	
+	! loop from atlanta till we reach atlanta back again
+	currentCity := 1
+	repeat
+		! find the next city j for TSP from this city i
+		forall ( j in Cities ) do
+			if abs(getsol(x(currentCity,j)-1))<0.1 then
+				
+				numSubtourCities += 1
+				! when we reach back the first city we do not need to
+				! set it to 1 as we will overwrite the next city
+				if ( j <> 1 ) then
+					SubtourCities(j) := 1
+				end-if
+				! save the next city in the prevcity of the sub tour
+				! this can be used to build the constaint easily
+				SubtourCities(currentCity) := j
+				currentCity := j
+				
+				break
+			end-if
+		end-do
+	until ( currentCity = 1 )
 	
 	
 	
@@ -132,9 +249,10 @@ repeat
 	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 	
 	! output the subtour you found
+	writeln(cnt)
 	writeln("\nFound a tour of distance ", getobjval, " and ", numSubtourCities, " cities")
 	writeln("Cities on the subtour are:")
-	forall (i in Cities | SubtourCities(i)=1) do
+	forall (i in Cities | SubtourCities(i) >= 1) do
 	! Note: forall ( ... | express ) is very useful, you may need to use it in the following part to add subtour elimination constraints
 		write(i, " ")
 	end-do
@@ -142,17 +260,26 @@ repeat
 	
 	
 	!!!!!!!!!!!!!!!!!!!! add the subtour elimination constraint !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	! If the subtour found above is indeed a subtour (i.e. has fewer than 48 cities), then add the corresponding subtour elimination constraint to the problem
+	! If the subtour found above is indeed a subtour (i.e. has fewer than 48 cities), then add the corresponding subtour elimination
+	!  constraint to the problem
 	! otherwise, if the subtour has 48 cities, then it's a TSP tour and optimal, terminate the constraint generation by setting the flag to 1
 	!!!!!! fill in you code !!!!!!!!!!
-
-
+	
+	if ( numSubtourCities = N ) then
+	   flag := 1
+	else
+		numSubtour += 1
+		create(subtourCtr(numSubtour))
+		subtourCtr(numSubtour):= sum (i in Cities | SubtourCities(i) >= 1 ) x(i, SubtourCities(i)) <= numSubtourCities - 1
+		!flag := 1
+	end-if
 
 
 
 
     !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    	
+   
+    
 until flag = 1
 
 !!!!!!!!!!!!!!!!!!!! end of the constraint generation algorithm !!!!!!!!!!!!!!!!!!!!!!!!!
@@ -176,6 +303,30 @@ until flag = 1
 		end-if
 	end-do
 	fclose(F_OUTPUT)
+
 writeln("End running model")
+
+
+
+!
+! The function checks if there is a closed tour for a list of cities
+!  input - list of cities
+!  return true -> there is a closed tour
+!  return false otherwise
+!
+function is_closed_tour (subCities:array(range) of integer, subTourSize:integer) : real
+
+	returned := 1
+
+	! check if every city has a direct path to any one other city in the list
+	! if not it will not form a loop of all those cities
+	forall ( i in 1..subTourSize , j in 1..subTourSize ) do
+		if abs(getsol(x(subCities(i),subCities(j)))-1)<0.1 then
+			returned := 0
+			break
+		end-if
+	end-do
+		
+end-function
 
 end-model
