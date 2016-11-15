@@ -101,132 +101,6 @@ $\\$
 \subsection{1.4.2 - 1 City Subtour Constraint Active}
 \label{q_1_4_2}
 
-\paragraph{a}
-The following table $\eqref{tab_q_2_1_3_a}$ tabulates the termination results for the different data files for the Kantorovich formulation in $cs.Kantorovich.partial.mos$. The program had to be terminated only for $cs1.dat$ after 5 mins, the other data files completed successfully.
-
-\begin{table}[h]
-\centering
-\resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|c|c|}
-		\hline
- 		File & Completed   & Comments \\
-		\hline
-		cs1.dat & No & Forcibly terminated the run after 300 secs.\\
-		\hline
-		cs2.dat & Yes & Completed in 2.6 secs.  \\
-		\hline
-		kant1.dat & Yes & Completed in 0.1 secs. \\
-		\hline
-		kant2.dat & Yes & Completed in 1.0 secs.  \\
-		\hline
-	\end{tabular}
-	}
-	\caption[]{Kantorovich Solver: Termination results for different data files }
-	\label{tab_q_2_1_3_a}
-\end{table}
-
-\paragraph{b}
-
-The following table $\eqref{tab_q_2_1_3_b}$ tabulates the  branch-and-bound (BB) nodes searched by the BB algorithm when the solver in $cs.Kantorovich.partial.mos$ terminates for the different data files. For cs1.dat the program is had to be terminated after 5 mins,  the other data files completed successfully.
-
-\begin{table}[h]
-\centering
-\resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|c|c|}
-		\hline
- 		File & branch-and-bound (BB) nodes searched & Comments \\
-		\hline
-		cs1.dat & 94503 &   Forcibly terminated the run after 300 secs.\\
-		\hline
-		cs2.dat & 77 &   Completed in 2.6 secs\\
-		\hline
-		kant1.dat & 1 &   Completed in 0.1 secs. \\
-		\hline
-		kant2.dat & 1950 &  Completed in 1.0 secs. \\
-		\hline
-	\end{tabular}
-	}
-	\caption[]{Kantorovich Solver: branch-and-bound (BB) nodes results searched for different data files }
-	\label{tab_q_2_1_3_b}
-\end{table}
-
-
-
-\paragraph{c}
-The following table $\eqref{tab_q_2_1_3_c}$ tabulates the objective value of the best lower bound $Z_L$ and the objective value of the best integer solution $Z_U$ when the solver in $cs.Kantorovich.partial.mos$ terminates for the different files. For cs1.dat the program is has to be terminated after 5 mins,  the other data files completed successfully.
-
-\begin{table}[h]
-\centering
-\resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|c|c|c|}
-		\hline
- 		File & $Z_L$  & $Z_U$ & Comments \\
-		\hline
-		cs1.dat & 542 & 544 & Forcibly terminated the run after 300 secs. \\
-		\hline
-		cs2.dat & 201 & 201 & Completed in 2.6 secs \\
-		\hline
-		kant1.dat & 22 & 22 & Completed in 0.1 secs. \\
-		\hline
-		kant2.dat & 30 & 30 & Completed in 1.0 secs. \\
-		\hline
-	\end{tabular}
-	}
-	\caption[]{Kantorovich Solver:  $Z_L$ and $Z_U$ results for different data files }
-	\label{tab_q_2_1_3_c}
-\end{table}
-
-\paragraph{d}
-The following table $\eqref{tab_q_2_1_3_d}$ tabulates the optimality gap, i.e. $\frac{(Z_U −Z_L)}{Z_U}$ when the solver in $cs.Kantorovich.partial.mos$ terminates for the different files. For cs1.dat the program is has to be terminated after 5 mins,  the other data files completed successfully.
-
-\begin{table}[h]
-\centering
-\resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|c|c|}
-		\hline
- 		File & Optimality Gap $\frac{(Z_U −Z_L)}{Z_U}$  & Comments \\
-		\hline
-		cs1.dat & $0.3677\%$ &  Forcibly terminated the run after 300 secs.  \\
-		\hline
-		cs2.dat & $0\%$ & Completed in 2.6 secs  \\
-		\hline
-		kant1.dat & $0\%$ &  Completed in 0.1 secs. \\
-		\hline
-		kant2.dat & $0\%$ &  Completed in 1.0 secs. \\
-		\hline
-	\end{tabular}
-	}
-	\caption[]{Kantorovich Solver: Optimality Gap $\frac{(Z_U −Z_L)}{Z_U}$  for different data files }
-	\label{tab_q_2_1_3_d}
-\end{table}
-
-
-\paragraph{e}
-The following table $\eqref{tab_q_2_1_3_e}$ tabulates how many integer solutions are found when the solver in $cs.Kantorovich.partial.mos$ terminates for the different files. For cs1.dat the program is has to be terminated after 5 mins,  the other data files completed successfully.
-
-\begin{table}[h]
-\centering
-\resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|L|L|L|L|}
-		\hline
- 		File &  Count of integer solutions  $count(y_i*x_{ij}) \text{ where } y_i*x_{ij} = ceil(y_i*x_{ij}) $& Total Solutions = $count(y_i*x_{ij})
-        $ & Min. No of Rolls integer constraints on both $y_i,x_{ij}$ relaxed  & Min. No Rolls integer constraints on only $x_{ij}$ relaxed  \\
-		\hline
-		cs1.dat & 79  &  545 & 542 & 542 \\
-		\hline
-		cs2.dat & 16  &  209 & 200.18 & 201\\
-		\hline
-		kant1.dat & 8 & 23 & 21.667 & 22 \\
-		\hline
-		kant2.dat & 17 & 32 & 30 & 30 \\
-		\hline
-	\end{tabular}
-	}
-	\caption[]{Kantorovich Solver: How many integer solutions found for different data files }
-	\label{tab_q_2_1_3_e}
-\end{table}
-
-\FloatBarrier
 
 $\\\\$
 \subsection{1.4.3 - 2 City Subtour Constraints Active}
@@ -278,15 +152,51 @@ $\\\\$
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{hw5_q1_4_1}$ is the plot of the feasible regions of the XOR statement. The feasible region could be either $S_1 $ or $S_2$ but not both at the same time.
- \includegraphics[scale=8]{hw5_q1_4_1} 
-\caption{Feasible Region of the XOR statement $S_1 $ or $S_2$}
-\label{hw5_q1_4_1}
+Figure $\eqref{g_q1_4_7_1}$ is the plot of the TSP of the 48 state tour with No initial Sub-tour constraints. 
+ \includegraphics[scale=1.3]{0_city/all_48_with_0} 
+\caption{TSP Tour Plot - 48 State Tour with 0 Initial Sub-Tour constraints}
+\label{g_q1_4_7_1}
 \end{figure}
 \FloatBarrier
 
 
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_7_2}$ is the plot of the TSP of the 48 state tour with 1 City Sub-tour constraint. 
+ \includegraphics[scale=1.3]{1_city/all_48_with_1} 
+\caption{TSP Tour Plot - 48 State Tour with 1-City Initial Sub-Tour constraints}
+\label{g_q1_4_7_2}
+\end{figure}
+\FloatBarrier
 
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_7_3}$ is the plot of the TSP of the 48 state tour with 2 City Sub-tour constraint. 
+ \includegraphics[scale=1.4]{2_city/all_48_with_2} 
+\caption{TSP Tour Plot - 48 State Tour with 2-City Initial Sub-Tour constraints}
+\label{g_q1_4_7_3}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_7_4}$ is the plot of the TSP of the 48 state tour with 3 City Sub-tour constraint. 
+ \includegraphics[scale=1.4]{3_city/all_48_with_3} 
+\caption{TSP Tour Plot - 48 State Tour with 3-City Initial Sub-Tour constraints}
+\label{g_q1_4_7_4}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_7_5}$ is the plot of the TSP of the 48 state tour with 4 City Sub-tour constraint. 
+ \includegraphics[scale=1.3]{4_city/all_48_with_4} 
+\caption{TSP Tour Plot - 48 State Tour with 4-City Initial Sub-Tour constraints}
+\label{g_q1_4_7_5}
+\end{figure}
+\FloatBarrier
 
 
 $\\\\$
@@ -352,11 +262,61 @@ Table $\eqref{tab_q_1_4_9_1}$ tabulates the results of the time taken in seconds
 \end{table}
 
 
+
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_9_1}$ is the plot of the TSP of the 24 state tour with No initial Sub-tour constraints. 
+ \includegraphics[scale=1.3]{0_city/all_24_with_0} 
+\caption{TSP Tour Plot - 24 State Tour with 0 Initial Sub-Tour constraints}
+\label{g_q1_4_9_1}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_9_2}$ is the plot of the TSP of the 24 state tour with 1 City Sub-tour constraint. 
+ \includegraphics[scale=1.3]{1_city/all_24_with_1} 
+\caption{TSP Tour Plot - 24 State Tour with 1-City Initial Sub-Tour constraints}
+\label{g_q1_4_9_2}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_9_3}$ is the plot of the TSP of the 24 state tour with 2 City Sub-tour constraint. 
+ \includegraphics[scale=1.3]{2_city/all_24_with_2} 
+\caption{TSP Tour Plot - 24 State Tour with 2-City Initial Sub-Tour constraints}
+\label{g_q1_4_9_3}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_9_4}$ is the plot of the TSP of the 24 state tour with 3 City Sub-tour constraint. 
+ \includegraphics[scale=1.2]{3_city/all_24_with_3} 
+\caption{TSP Tour Plot - 24 State Tour with 3-City Initial Sub-Tour constraints}
+\label{g_q1_4_9_4}
+\end{figure}
+\FloatBarrier
+
+
+\begin{figure}[!htbp]
+\centering
+Figure $\eqref{g_q1_4_9_5}$ is the plot of the TSP of the 24 state tour with 4 City Sub-tour constraint. 
+ \includegraphics[scale=1.2]{4_city/all_24_with_4} 
+\caption{TSP Tour Plot - 24 State Tour with 4-City Initial Sub-Tour constraints}
+\label{g_q1_4_9_5}
+\end{figure}
+\FloatBarrier
+
+
 $\\\\$
 \section{Source Code}
 
 \subsection{TSP-DFJ-partial.mos}
-\begin{verbatim*}
+\begin{verbatim}
 model ModelName
 uses "mmxprs"; !gain access to the Xpress-Optimizer solver
 uses "mmsystem" ! include package to operating systems
@@ -710,7 +670,7 @@ until flag = 1
 writeln("End running model")
 
 end-model
-\end{verbatim*}
+\end{verbatim}
 
 
 \subsection{US24TourPlot.m}
