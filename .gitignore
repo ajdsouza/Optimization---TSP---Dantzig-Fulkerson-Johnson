@@ -3,4 +3,8 @@
 *.swp
 *.bdg
 *.bim
-
+*.lot
+*.lof
+*.aux
+*.toc
+*.synctex

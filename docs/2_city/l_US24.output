@@ -1,0 +1,391 @@
+Starting at time :0
+Constraints Added : 0
+Time in Secs : 0.156
+Objective Distaince : 19469.3
+Subtour from Atlanta : 11
+Full Tour:
+1	6
+2	13
+3	14
+4	24
+5	10
+6	9
+7	12
+8	20
+9	2
+10	21
+11	8
+12	23
+13	7
+14	18
+15	5
+16	22
+17	4
+18	3
+19	16
+20	1
+21	15
+22	19
+23	11
+24	17
+--------------------------
+Constraints Added : 1
+Time in Secs : 0.25
+Objective Distaince : 19469.3
+Subtour from Atlanta : 11
+Full Tour:
+1	6
+2	13
+3	18
+4	24
+5	10
+6	9
+7	12
+8	20
+9	2
+10	21
+11	8
+12	23
+13	7
+14	3
+15	5
+16	22
+17	4
+18	14
+19	16
+20	1
+21	15
+22	19
+23	11
+24	17
+--------------------------
+Constraints Added : 2
+Time in Secs : 0.328
+Objective Distaince : 19469.3
+Subtour from Atlanta : 11
+Full Tour:
+1	6
+2	13
+3	18
+4	17
+5	10
+6	9
+7	12
+8	20
+9	2
+10	21
+11	8
+12	23
+13	7
+14	3
+15	5
+16	22
+17	24
+18	14
+19	16
+20	1
+21	15
+22	19
+23	11
+24	4
+--------------------------
+Constraints Added : 3
+Time in Secs : 0.421
+Objective Distaince : 21928.4
+Subtour from Atlanta : 12
+Full Tour:
+1	20
+2	9
+3	24
+4	18
+5	15
+6	1
+7	13
+8	11
+9	6
+10	5
+11	23
+12	7
+13	17
+14	3
+15	21
+16	19
+17	2
+18	14
+19	22
+20	8
+21	10
+22	16
+23	12
+24	4
+--------------------------
+Constraints Added : 4
+Time in Secs : 0.515
+Objective Distaince : 22412.6
+Subtour from Atlanta : 12
+Full Tour:
+1	20
+2	9
+3	24
+4	14
+5	15
+6	1
+7	13
+8	11
+9	6
+10	5
+11	23
+12	7
+13	17
+14	18
+15	21
+16	19
+17	2
+18	3
+19	22
+20	8
+21	10
+22	16
+23	12
+24	4
+--------------------------
+Constraints Added : 5
+Time in Secs : 0.593
+Objective Distaince : 23550.7
+Subtour from Atlanta : 11
+Full Tour:
+1	20
+2	9
+3	4
+4	17
+5	15
+6	1
+7	13
+8	11
+9	6
+10	5
+11	23
+12	7
+13	2
+14	3
+15	21
+16	22
+17	24
+18	14
+19	16
+20	8
+21	10
+22	19
+23	12
+24	18
+--------------------------
+Constraints Added : 6
+Time in Secs : 0.749
+Objective Distaince : 24267.3
+Subtour from Atlanta : 17
+Full Tour:
+1	6
+2	17
+3	4
+4	13
+5	15
+6	9
+7	12
+8	20
+9	2
+10	5
+11	8
+12	23
+13	7
+14	3
+15	21
+16	22
+17	24
+18	14
+19	16
+20	1
+21	10
+22	19
+23	11
+24	18
+--------------------------
+Constraints Added : 7
+Time in Secs : 0.889
+Objective Distaince : 24267.3
+Subtour from Atlanta : 17
+Full Tour:
+1	6
+2	17
+3	4
+4	13
+5	10
+6	9
+7	12
+8	20
+9	2
+10	21
+11	8
+12	23
+13	7
+14	3
+15	5
+16	22
+17	24
+18	14
+19	16
+20	1
+21	15
+22	19
+23	11
+24	18
+--------------------------
+Constraints Added : 8
+Time in Secs : 1.03
+Objective Distaince : 24509
+Subtour from Atlanta : 17
+Full Tour:
+1	6
+2	17
+3	4
+4	13
+5	21
+6	9
+7	12
+8	20
+9	2
+10	5
+11	8
+12	23
+13	7
+14	3
+15	10
+16	19
+17	24
+18	14
+19	22
+20	1
+21	15
+22	16
+23	11
+24	18
+--------------------------
+Constraints Added : 9
+Time in Secs : 1.154
+Objective Distaince : 24509
+Subtour from Atlanta : 17
+Full Tour:
+1	6
+2	17
+3	4
+4	13
+5	10
+6	9
+7	12
+8	20
+9	2
+10	15
+11	8
+12	23
+13	7
+14	3
+15	21
+16	19
+17	24
+18	14
+19	22
+20	1
+21	5
+22	16
+23	11
+24	18
+--------------------------
+Constraints Added : 10
+Time in Secs : 1.295
+Objective Distaince : 25658.3
+Subtour from Atlanta : 20
+Full Tour:
+1	6
+2	17
+3	4
+4	12
+5	22
+6	9
+7	8
+8	20
+9	2
+10	5
+11	15
+12	23
+13	7
+14	3
+15	21
+16	19
+17	24
+18	14
+19	1
+20	13
+21	10
+22	16
+23	11
+24	18
+--------------------------
+Constraints Added : 11
+Time in Secs : 1.42
+Objective Distaince : 25658.3
+Subtour from Atlanta : 20
+Full Tour:
+1	6
+2	17
+3	4
+4	12
+5	22
+6	9
+7	13
+8	7
+9	2
+10	5
+11	15
+12	23
+13	20
+14	3
+15	21
+16	19
+17	24
+18	14
+19	1
+20	8
+21	10
+22	16
+23	11
+24	18
+--------------------------
+Constraints Added : 12
+Time in Secs : 1.544
+Objective Distaince : 25695.4
+Subtour from Atlanta : 24
+Full Tour:
+1	6
+2	17
+3	4
+4	12
+5	22
+6	9
+7	13
+8	11
+9	2
+10	5
+11	15
+12	23
+13	20
+14	3
+15	21
+16	19
+17	24
+18	14
+19	1
+20	8
+21	10
+22	16
+23	7
+24	18
+--------------------------

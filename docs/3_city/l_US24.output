@@ -1,0 +1,421 @@
+Starting at time :0
+Constraints Added : 0
+Time in Secs : 0.422
+Objective Distaince : 22119.3
+Subtour from Atlanta : 15
+Full Tour:
+1	6
+2	17
+3	14
+4	24
+5	15
+6	9
+7	12
+8	20
+9	2
+10	5
+11	8
+12	23
+13	7
+14	4
+15	21
+16	19
+17	13
+18	3
+19	1
+20	22
+21	10
+22	16
+23	11
+24	18
+--------------------------
+Constraints Added : 1
+Time in Secs : 0.765
+Objective Distaince : 22119.3
+Subtour from Atlanta : 15
+Full Tour:
+1	6
+2	17
+3	18
+4	14
+5	10
+6	9
+7	12
+8	20
+9	2
+10	21
+11	8
+12	23
+13	7
+14	3
+15	5
+16	19
+17	13
+18	24
+19	1
+20	22
+21	15
+22	16
+23	11
+24	4
+--------------------------
+Constraints Added : 2
+Time in Secs : 1.139
+Objective Distaince : 22256.4
+Subtour from Atlanta : 15
+Full Tour:
+1	19
+2	9
+3	18
+4	24
+5	10
+6	1
+7	13
+8	11
+9	6
+10	21
+11	23
+12	7
+13	17
+14	3
+15	5
+16	22
+17	2
+18	4
+19	16
+20	8
+21	15
+22	20
+23	12
+24	14
+--------------------------
+Constraints Added : 3
+Time in Secs : 1.482
+Objective Distaince : 22376.3
+Subtour from Atlanta : 15
+Full Tour:
+1	6
+2	17
+3	4
+4	24
+5	10
+6	9
+7	12
+8	20
+9	2
+10	21
+11	8
+12	23
+13	7
+14	3
+15	5
+16	19
+17	13
+18	14
+19	1
+20	22
+21	15
+22	16
+23	11
+24	18
+--------------------------
+Constraints Added : 4
+Time in Secs : 1.888
+Objective Distaince : 22520.9
+Subtour from Atlanta : 15
+Full Tour:
+1	6
+2	17
+3	24
+4	18
+5	10
+6	9
+7	12
+8	20
+9	2
+10	21
+11	8
+12	23
+13	7
+14	3
+15	5
+16	19
+17	13
+18	14
+19	1
+20	22
+21	15
+22	16
+23	11
+24	4
+--------------------------
+Constraints Added : 5
+Time in Secs : 2.294
+Objective Distaince : 24075.5
+Subtour from Atlanta : 20
+Full Tour:
+1	19
+2	9
+3	4
+4	17
+5	15
+6	1
+7	11
+8	20
+9	6
+10	5
+11	23
+12	24
+13	7
+14	3
+15	21
+16	22
+17	2
+18	14
+19	16
+20	13
+21	10
+22	8
+23	12
+24	18
+--------------------------
+Constraints Added : 6
+Time in Secs : 2.652
+Objective Distaince : 24075.5
+Subtour from Atlanta : 20
+Full Tour:
+1	19
+2	9
+3	4
+4	17
+5	10
+6	1
+7	11
+8	20
+9	6
+10	21
+11	23
+12	24
+13	7
+14	3
+15	5
+16	22
+17	2
+18	14
+19	16
+20	13
+21	15
+22	8
+23	12
+24	18
+--------------------------
+Constraints Added : 7
+Time in Secs : 3.074
+Objective Distaince : 24317.2
+Subtour from Atlanta : 20
+Full Tour:
+1	19
+2	9
+3	4
+4	17
+5	10
+6	1
+7	11
+8	20
+9	6
+10	15
+11	23
+12	24
+13	7
+14	3
+15	21
+16	22
+17	2
+18	14
+19	16
+20	13
+21	5
+22	8
+23	12
+24	18
+--------------------------
+Constraints Added : 8
+Time in Secs : 3.448
+Objective Distaince : 24317.2
+Subtour from Atlanta : 20
+Full Tour:
+1	19
+2	9
+3	4
+4	17
+5	21
+6	1
+7	11
+8	20
+9	6
+10	5
+11	23
+12	24
+13	7
+14	3
+15	10
+16	22
+17	2
+18	14
+19	16
+20	13
+21	15
+22	8
+23	12
+24	18
+--------------------------
+Constraints Added : 9
+Time in Secs : 3.854
+Objective Distaince : 24370.6
+Subtour from Atlanta : 20
+Full Tour:
+1	19
+2	9
+3	4
+4	17
+5	21
+6	1
+7	11
+8	20
+9	6
+10	15
+11	23
+12	24
+13	7
+14	3
+15	5
+16	22
+17	2
+18	14
+19	16
+20	13
+21	10
+22	8
+23	12
+24	18
+--------------------------
+Constraints Added : 10
+Time in Secs : 4.353
+Objective Distaince : 25587.7
+Subtour from Atlanta : 18
+Full Tour:
+1	6
+2	13
+3	4
+4	17
+5	22
+6	9
+7	12
+8	20
+9	2
+10	15
+11	21
+12	23
+13	7
+14	3
+15	5
+16	19
+17	24
+18	14
+19	8
+20	1
+21	10
+22	16
+23	11
+24	18
+--------------------------
+Constraints Added : 11
+Time in Secs : 4.852
+Objective Distaince : 25824.6
+Subtour from Atlanta : 18
+Full Tour:
+1	6
+2	13
+3	17
+4	18
+5	22
+6	9
+7	12
+8	20
+9	2
+10	15
+11	21
+12	23
+13	7
+14	3
+15	5
+16	19
+17	24
+18	14
+19	8
+20	1
+21	10
+22	16
+23	11
+24	4
+--------------------------
+Constraints Added : 12
+Time in Secs : 5.149
+Objective Distaince : 28161.6
+Subtour from Atlanta : 14
+Full Tour:
+1	6
+2	20
+3	17
+4	13
+5	22
+6	9
+7	23
+8	11
+9	2
+10	15
+11	21
+12	24
+13	7
+14	3
+15	5
+16	19
+17	4
+18	14
+19	1
+20	8
+21	10
+22	16
+23	12
+24	18
+--------------------------
+Constraints Added : 13
+Time in Secs : 5.429
+Objective Distaince : 28413.2
+Subtour from Atlanta : 24
+Full Tour:
+1	6
+2	20
+3	12
+4	17
+5	22
+6	9
+7	13
+8	7
+9	2
+10	15
+11	21
+12	23
+13	4
+14	3
+15	5
+16	19
+17	24
+18	14
+19	1
+20	8
+21	10
+22	16
+23	11
+24	18
+--------------------------
