@@ -89,72 +89,75 @@ Project 2 Report for ISyE6669 Deterministic Optimization
 %
 % Body text.
 %
-\section{1.4 Computation Experiments}
+\section{Computation Experiments - Q1.4}
 \label{p1}
 
-\subsection{1.4.1 - All Small Subtour Constraints Commented}
+\subsection{No Small Sub-tour Elimination Constraints - Q1.4.1}
 \label{q_1_4_1}
-
+The 48 city TSP tour with commenting out all the small Sub-tour constraints completed its run in 36.91 seconds. The number of generated Sub-Tour constraints during the course of the run was 171. The TSP had a optimal distance of 46837.9.  The TSP Tour for this formulation is plotted in figure $\eqref{g_q1_4_7_1}$ below. The results of this formulation are tabulated in table $\eqref{tab_q_1_4_6_1}$
 
 
 $\\$
-\subsection{1.4.2 - 1 City Subtour Constraint Active}
+\subsection{1-City Sub-tour Elimination Constraint- Q1.4.2}
 \label{q_1_4_2}
-
+The 48 city TSP tour initialized with only the 1-City small sub-tour elimination constraint, completed its run in 31.68 seconds. The number of generated Sub-Tour constraints during the course of the run was 146. The TSP had a optimal distance of 50521.3 .  The TSP Tour for this formulation is plotted in figure $\eqref{g_q1_4_7_2}$ below. The results of this formulation are tabulated in table $\eqref{tab_q_1_4_6_1}$
 
 $\\\\$
-\subsection{1.4.3 - 2 City Subtour Constraints Active}
+\subsection{2-City Sub-tour Elimination Constraint - Q1.4.3}
 \label{q_1_4_3}
-
+The 48 city TSP tour initialized with both the 1-City and 2-City small sub-tour elimination constraints, completed its run in 30.75 seconds. The number of generated Sub-Tour constraints during the course of the run was 51. The TSP had a optimal distance of 39829.1 .  The TSP Tour for this formulation is plotted in figure $\eqref{g_q1_4_7_3}$ below. The results of this formulation are tabulated in table $\eqref{tab_q_1_4_6_1}$
 
 $\\\\$
-\subsection{1.4.4 - 3 City Subtour Constraints Active}
+\subsection{3-City Sub-tour Elimination Constraint - Q1.4.4}
 \label{q_1_4_4}
-
+The 48 city TSP tour initialized with the 1-City 2-City and 3-City small sub-tour elimination constraints, completed its run in 119.35 seconds. The number of generated Sub-Tour constraints during the course of the run was 27. The TSP had a optimal distance of 35207.9 .  The TSP Tour for this formulation is plotted in figure $\eqref{g_q1_4_7_4}$ below. The results of this formulation are tabulated in table $\eqref{tab_q_1_4_6_1}$
 
 $\\\\$
-\subsection{1.4.5 - 4 City Subtour Constraints Active}
+\subsection{4-City Sub-tour Elimination Constraint - Q1.4.5}
 \label{q_1_4_5}
-
+The 48 city TSP tour initialized with the 1-City 2-City, 3-City and 4-City small sub-tour elimination constraints, completed its run in 3840.46 seconds ($\approxeq 64 Mins$). The number of generated Sub-Tour constraints during the course of the run was 33. The TSP had a optimal distance of 35868.7 .  The TSP Tour for this formulation is plotted in figure $\eqref{g_q1_4_7_5}$ below. The results of this formulation are tabulated in table $\eqref{tab_q_1_4_6_1}$
 
 $\\\\$
-\subsection{1.4.6 - Number of Constrains for each formulation}
+\subsection{Comparing the Results for each formulation for the 48 City Tour - Q1.4.6}
 \label{q_1_4_6}
 
-Table $\eqref{tab_q_1_4_6_1}$ tabulates the results of the time taken in seconds, the number of constraints generated and the optimal tour distance for the 24 city tour for each of the formulations with different initial sub-tour constraints
+Table $\eqref{tab_q_1_4_6_1}$ tabulates the results of the time taken in seconds, the number of constraints generated and the optimal tour distance for the 48 city tour for each of the formulations with different initial sub-tour constraints
 \begin{table}[h]
 \centering
 \resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|}
 		\hline
- 		Model &  Time Taken & No of Constraints Generated  & Optimal Distance &  \\
+ 		Formulation &  Time Taken(Secs) & No. of Generated Sub-tour Constraints & Optimal Tour Distance  \\
 		\hline
-		No City Constraint & 542.5 & 200.18 & 21.667 & 30 \\
+		No Sub-tour Constraint & 36.91 & 171 & 46837.9  \\
 		\hline
-		1 City Sub-tour Constraint & 544 & 205 & 22 & 31 \\
+		1 City Sub-tour Constraint & 31.67 & 146 & 50521.3  \\
 		\hline
-		2 City Sub-tour Constraint & 543 & 203 & 22 & 31 \\
+		2 City Sub-tour Constraint & 30.75 & 51 & 39829.1   \\
 		\hline
-		3 City Sub-tour Constraint & 543 & 203 & 22 & 31 \\
+		3 City Sub-tour Constraint & 119.35 & 27 & 35207.9   \\
 		\hline
-		4 City Sub-tour Constraint & 543 & 203 & 22 & 31 \\
+		4 City Sub-tour Constraint & 3840.46 & 33 & 35868.7  \\
 		\hline
 	\end{tabular}
 	}
-	\caption[]{Compare results from formulations with the Initial Constraints for a 48 state tour}
+	\caption[]{48 City Tour - Compare results from formulations with different Initial Sub-tour Constraints }
 	\label{tab_q_1_4_6_1}
 \end{table}
 
 
 $\\\\$
-\subsection{1.4.7 - TSP Tour plots}
+\subsection{48 City TSP Tour plots - Q1.4.7}
 \label{q_1_4_7}
+
+The following are the plots of the tour generated by the various formulations for the 48 City tour.
+$\\$
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_7_1}$ is the plot of the TSP of the 48 state tour with No initial Sub-tour constraints. 
+Figure $\eqref{g_q1_4_7_1}$ is the plot of the TSP of the 48 city tour with no initial Sub-tour constraints. 
  \includegraphics[scale=1.3]{0_city/all_48_with_0} 
-\caption{TSP Tour Plot - 48 State Tour with 0 Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 48 City Tour with no initial Sub-tour constraints}
 \label{g_q1_4_7_1}
 \end{figure}
 \FloatBarrier
@@ -162,18 +165,18 @@ Figure $\eqref{g_q1_4_7_1}$ is the plot of the TSP of the 48 state tour with No 
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_7_2}$ is the plot of the TSP of the 48 state tour with 1 City Sub-tour constraint. 
+Figure $\eqref{g_q1_4_7_2}$ is the plot of the TSP of the 48 city tour with 1-City Sub-tour constraint. 
  \includegraphics[scale=1.3]{1_city/all_48_with_1} 
-\caption{TSP Tour Plot - 48 State Tour with 1-City Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 48 City Tour with 1-City initial Sub-tour constraints}
 \label{g_q1_4_7_2}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_7_3}$ is the plot of the TSP of the 48 state tour with 2 City Sub-tour constraint. 
- \includegraphics[scale=1.4]{2_city/all_48_with_2} 
-\caption{TSP Tour Plot - 48 State Tour with 2-City Initial Sub-Tour constraints}
+Figure $\eqref{g_q1_4_7_3}$ is the plot of the TSP of the 48 city tour with 2-City Sub-tour constraint. 
+ \includegraphics[scale=1.3]{2_city/all_48_with_2} 
+\caption{TSP Tour Plot - 48 City Tour with 2-City initial Sub-tour constraints}
 \label{g_q1_4_7_3}
 \end{figure}
 \FloatBarrier
@@ -181,9 +184,9 @@ Figure $\eqref{g_q1_4_7_3}$ is the plot of the TSP of the 48 state tour with 2 C
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_7_4}$ is the plot of the TSP of the 48 state tour with 3 City Sub-tour constraint. 
+Figure $\eqref{g_q1_4_7_4}$ is the plot of the TSP of the 48 city tour with 3-City Sub-tour constraint. 
  \includegraphics[scale=1.4]{3_city/all_48_with_3} 
-\caption{TSP Tour Plot - 48 State Tour with 3-City Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 48 City Tour with 3-City initial Sub-tour constraints}
 \label{g_q1_4_7_4}
 \end{figure}
 \FloatBarrier
@@ -191,21 +194,21 @@ Figure $\eqref{g_q1_4_7_4}$ is the plot of the TSP of the 48 state tour with 3 C
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_7_5}$ is the plot of the TSP of the 48 state tour with 4 City Sub-tour constraint. 
+Figure $\eqref{g_q1_4_7_5}$ is the plot of the TSP of the 48 City tour with 4-City Sub-tour constraint. 
  \includegraphics[scale=1.3]{4_city/all_48_with_4} 
-\caption{TSP Tour Plot - 48 State Tour with 4-City Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 48 City Tour with 4-City initial Sub-tour constraints}
 \label{g_q1_4_7_5}
 \end{figure}
 \FloatBarrier
 
 
 $\\\\$
-\subsection{1.4.8 - TSP Tour with City Names}
+\subsection{48 City TSP Tour with City Names - Q1.4.8}
 \label{q_1_4_8}
 
 
 $\\\\$
-\subsection{1.4.9 - TSP for 24 City Tour}
+\subsection{24 City TSP Tour - Q1.4.9}
 \label{q_1_4_9}
 
 The following are the 24 cities randomly chosen for the 24 city tour
@@ -237,37 +240,47 @@ coord  : [
 48 3023 1942]
 \end{verbatim}
 
-Table $\eqref{tab_q_1_4_9_1}$ tabulates the results of the time taken in seconds, the number of constraints generated and the optimal tour distance for the 24 city tour for each of the formulations with different initial sub-tour constraints
+
+$\\\\$
+\subsubsection{Comparing the Results for each formulation for the 24 City Tour}
+\label{q_1_4_9_1}
+The 24 City tour was done using the different initial small sub-tour constraints from no city to 4-City.
+$\\\\\\$
+Table $\eqref{tab_q_1_4_9_1}$ tabulates the results of the time taken in seconds, the number of constraints generated and the optimal tour distance for the 24 city tour for each of the formulations with different initial sub-tour constraints$\\$
 \begin{table}[h]
 \centering
 \resizebox{\textwidth}{!}{
-	\begin{tabular}{|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|}
 		\hline
- 		Model &  Time Taken & No of Constraints Generated  & Optimal Distance &  \\
+ 		Formulation &  Time Taken(Secs) & No. of Generated Sub-tour Constraints & Optimal Tour Distance  \\
 		\hline
-		No City Constraint & 542.5 & 200.18 & 21.667 & 30 \\
+		No Sub-tour Constraint & 4.56 & 72 & 33974.5  \\
 		\hline
-		1 City Sub-tour Constraint & 544 & 205 & 22 & 31 \\
+		1 City Sub-tour Constraint & 1.25 & 17 & 26876.8  \\
 		\hline
-		2 City Sub-tour Constraint & 543 & 203 & 22 & 31 \\
+		2 City Sub-tour Constraint & 1.54 & 12 & 25695.4   \\
 		\hline
-		3 City Sub-tour Constraint & 543 & 203 & 22 & 31 \\
+		3 City Sub-tour Constraint & 5.43 & 13 & 28413.2   \\
 		\hline
-		4 City Sub-tour Constraint & 543 & 203 & 22 & 31 \\
+		4 City Sub-tour Constraint & 33.35 & 5 & 25353.6  \\
 		\hline
 	\end{tabular}
 	}
-	\caption[]{Compare results from formulations with the Initial Constraints for a 24 state tour}
+	\caption[]{24 City Tour - Compare results from formulations with the different Initial Sub-tour Constraints}
 	\label{tab_q_1_4_9_1}
 \end{table}
 
-
+$\\\\$
+\subsubsection{24 City Tour - Plotting the Results for each formulation}
+\label{q_1_4_9_2}
+The following figures plot the 24 City tours generated with each different small sub-tour constraints
+$\\$
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_9_1}$ is the plot of the TSP of the 24 state tour with No initial Sub-tour constraints. 
+Figure $\eqref{g_q1_4_9_1}$ is the plot of the TSP of the 24 city tour with no initial Sub-tour constraints. 
  \includegraphics[scale=1.3]{0_city/all_24_with_0} 
-\caption{TSP Tour Plot - 24 State Tour with 0 Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 24 City Tour with no initial Sub-tour constraints}
 \label{g_q1_4_9_1}
 \end{figure}
 \FloatBarrier
@@ -275,18 +288,18 @@ Figure $\eqref{g_q1_4_9_1}$ is the plot of the TSP of the 24 state tour with No 
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_9_2}$ is the plot of the TSP of the 24 state tour with 1 City Sub-tour constraint. 
+Figure $\eqref{g_q1_4_9_2}$ is the plot of the TSP of the 24 city tour with 1-City Sub-tour constraint. 
  \includegraphics[scale=1.3]{1_city/all_24_with_1} 
-\caption{TSP Tour Plot - 24 State Tour with 1-City Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 24 City Tour with 1-City initial Sub-tour constraints}
 \label{g_q1_4_9_2}
 \end{figure}
 \FloatBarrier
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_9_3}$ is the plot of the TSP of the 24 state tour with 2 City Sub-tour constraint. 
+Figure $\eqref{g_q1_4_9_3}$ is the plot of the TSP of the 24 city tour with 2-City Sub-tour constraint. 
  \includegraphics[scale=1.3]{2_city/all_24_with_2} 
-\caption{TSP Tour Plot - 24 State Tour with 2-City Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 24 City Tour with 2-City initial Sub-tour constraints}
 \label{g_q1_4_9_3}
 \end{figure}
 \FloatBarrier
@@ -294,19 +307,19 @@ Figure $\eqref{g_q1_4_9_3}$ is the plot of the TSP of the 24 state tour with 2 C
 
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_9_4}$ is the plot of the TSP of the 24 state tour with 3 City Sub-tour constraint. 
+Figure $\eqref{g_q1_4_9_4}$ is the plot of the TSP of the 24 city tour with 3-City Sub-tour constraint. 
  \includegraphics[scale=1.2]{3_city/all_24_with_3} 
-\caption{TSP Tour Plot - 24 State Tour with 3-City Initial Sub-Tour constraints}
+\caption{TSP Tour Plot - 24 City Tour with 3-City initial Sub-tour constraints}
 \label{g_q1_4_9_4}
 \end{figure}
 \FloatBarrier
 
-
+$\\$
 \begin{figure}[!htbp]
 \centering
-Figure $\eqref{g_q1_4_9_5}$ is the plot of the TSP of the 24 state tour with 4 City Sub-tour constraint. 
- \includegraphics[scale=1.2]{4_city/all_24_with_4} 
-\caption{TSP Tour Plot - 24 State Tour with 4-City Initial Sub-Tour constraints}
+Figure $\eqref{g_q1_4_9_5}$ is the plot of the TSP of the 24 city tour with 4-City Sub-tour constraint. 
+ \includegraphics[scale=1.35]{4_city/all_24_with_4} 
+\caption{TSP Tour Plot - 24 City Tour with 4-City initial Sub-tour constraints}
 \label{g_q1_4_9_5}
 \end{figure}
 \FloatBarrier
@@ -314,6 +327,8 @@ Figure $\eqref{g_q1_4_9_5}$ is the plot of the TSP of the 24 state tour with 4 C
 
 $\\\\$
 \section{Source Code}
+
+The following is the source code for file $TSP-DFJ-partial.mos$ for the 48 city tour with 3-City and 4-City small sub-tour initial constraints commented out.
 
 \subsection{TSP-DFJ-partial.mos}
 \begin{verbatim}
@@ -674,6 +689,9 @@ end-model
 
 
 \subsection{US24TourPlot.m}
+
+The following is the source code for $US24TourPlot.m$, for plotting the TSP for the 24 City tour.
+
 \begin{verbatim}
 clear all;
 
