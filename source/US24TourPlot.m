@@ -20,11 +20,17 @@ end
 fclose(f);
 cities = cities(1:rCnt-1,:) ;
 
-coordfile = 'US48.input';
+
+%map from indices of the 24 cities selected to the actual citites in the
+% list of 48
+coordfile = 'US24.input';
 f = fopen(coordfile,'r');
 coord = fscanf(f, '%d %f %f', [3, inf]);
 fclose(f);
 coord = coord';
+
+%get only those citites in the 24 tour list
+cities = cities(coord(:,1),:)
 
 tour = zeros(24,1);
 tour(1) = 1;

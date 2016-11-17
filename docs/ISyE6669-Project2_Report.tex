@@ -264,31 +264,30 @@ $\\\\$
 
 The following are the 24 cities randomly chosen for the 24 city tour
 \begin{verbatim}
-coord  : [
-1 6898 1885
-3 5530 1424
-4 401 841
-5 3082 1644
-6 7608 4458
-8 7265 1268
-11 5468 2606
-15 6347 2683
-16 6107 669
-19 7732 4723
-20 5900 3561
-21 4483 3369
-23 5199 2182
-26 675 1006
-30 7352 4506
-31 7545 2801
-34 4608 1198
-35 23 2216
-38 7392 2244
-40 6271 2135
-43 7280 4899
-44 7509 3239
-47 5185 3258
-48 3023 1942]
+1 6898 1885 - Atlanta
+3 5530 1424 - Little Rock
+4 401 841 - Sacramento
+5 3082 1644 - Denver
+6 7608 4458 - Hartford
+8 7265 1268 - Tallahassee
+11 5468 2606 - Springfield
+15 6347 2683 - Frankfort
+16 6107 669 - Baton Rouge
+19 7732 4723 - Boston
+20 5900 3561 - Lansing
+21 4483 3369 - Saint Paul
+23 5199 2182 - Jefferson City
+26 675 1006 - Carson City
+30 7352 4506 - Albany
+31 7545 2801 - Raleigh
+34 4608 1198 - Oklahoma City
+35 23 2216 - Salem
+38 7392 2244 - Columbia
+40 6271 2135 - Nashville
+43 7280 4899 - Montpelier
+44 7509 3239 - Richmond
+47 5185 3258 - Madison
+48 3023 1942 - Cheyenne
 \end{verbatim}
 
 
@@ -766,11 +765,17 @@ end
 fclose(f);
 cities = cities(1:rCnt-1,:) ;
 
-coordfile = 'US48.input';
+
+%map from indices of the 24 cities selected to the actual citites in the
+% list of 48
+coordfile = 'US24.input';
 f = fopen(coordfile,'r');
 coord = fscanf(f, '%d %f %f', [3, inf]);
 fclose(f);
 coord = coord';
+
+%get only those citites in the 24 tour list
+cities = cities(coord(:,1),:)
 
 tour = zeros(24,1);
 tour(1) = 1;
@@ -787,9 +792,7 @@ text(coord(tour(:,1),2),coord(tour(:,1),3), cities(tour(:,1),2),'HorizontalAlign
 
 hold on;
 plot([coord(tour(:,1),2);coord(1,2)],[coord(tour(:,1),3);coord(1,3)]);
-plot(coord(1,2),coord(1,3),'r*'); % the star marks Atlanta
-
-\end{verbatim}
+plot(coord(1,2),coord(1,3),'r*'); % the star marks Atlanta\end{verbatim}
 
 
 
