@@ -14,6 +14,7 @@
 \usepackage[section]{placeins}
 \usepackage{lipsum} % just for the example
 \usepackage{array}
+\usepackage[export]{adjustbox}
 
 % Use the standard article template.
 %
@@ -205,6 +206,56 @@ Figure $\eqref{g_q1_4_7_5}$ is the plot of the TSP of the 48 City tour with 4-Ci
 $\\\\$
 \subsection{48 City TSP Tour with City Names - Q1.4.8}
 \label{q_1_4_8}
+The following table $\eqref{tab_q_1_4_8_1}$ lists the city names used for the TSP tour.
+\begin{table}[h]
+\centering
+\resizebox{.5\textwidth}{!}{
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+ 		No &  City Name && No &  City Name\\
+		\hline
+		1&Atlanta&&25&Lincoln\\\hline
+		2&Phoenix&&26&Carson City\\\hline
+		3&Little Rock&&27&Concord\\\hline
+		4& Sacramento&&28&Trenton\\\hline
+		5&Denver&&29&Santa Fe\\\hline
+		6&Hartford&&30&Albany\\\hline
+		7&Dover&&31&Raleigh\\\hline
+		8&Tallahassee&&32&Bismark\\\hline
+		9&Montgomery&&33&Columbus\\\hline
+		10&Boise&&34&Oklahoma City\\\hline
+		11&Springfield&&35&Salem\\\hline
+		12&Indianapolis&&36&Harrisburg\\\hline
+		13&Des Moines&&37&Providence\\\hline
+		14&Topeka&&38&Columbia\\\hline
+		15&Frankfort&&39&Pierre\\\hline
+		16&Baton Rouge&&40&Nashville\\\hline
+		17&Augusta&&41&Austin\\\hline
+		18&Annapolis&&42&Salt Lake City\\\hline
+		19&Boston&&43&Montpelier\\\hline
+		20&Lansing&&44&Richmond\\\hline
+		21&Saint Paul&&45&Olympia\\\hline
+		22&Jackson&&46&Charleston\\\hline
+		23&Jefferson City&&47&Madison\\\hline
+		24&Helena&&48&Cheyenne\\\hline
+	\end{tabular}
+	}
+	\caption[]{48 City Tour - List of Cities}
+	\label{tab_q_1_4_8_1}
+\end{table}
+\FloatBarrier
+
+$\\\\\\\\$
+ $\\$
+\begin{figure}[!htbp]
+\centering
+The formulation with 3-City small sub-tour initial constraints gives optimum tour with the lowest distance of  35207.9, for the 48 City TSP tour. Figure $\eqref{g_q1_4_8_1}$ is the plot of the TSP of the best 48 City tour with city names obtained with 3-City small initial Sub-tour constraint.
+ \includegraphics[width=1.2\textwidth,left]{3_city/all48_with_3_city_names} 
+\caption{Best TSP Tour Plot - 48 City Tour with 3-City initial Sub-tour constraints}
+\label{g_q1_4_8_1}
+\end{figure}
+\FloatBarrier
+
 
 
 $\\\\$
@@ -273,13 +324,13 @@ Table $\eqref{tab_q_1_4_9_1}$ tabulates the results of the time taken in seconds
 $\\\\$
 \subsubsection{24 City Tour - Plotting the Results for each formulation}
 \label{q_1_4_9_2}
-The following figures plot the 24 City tours generated with each different small sub-tour constraints
+The following figures plot the 24 City tours generated with each different small sub-tour constraints. The formulation with 4-City small sub-tour initial constraints gives optimum tour with the lowest distance of  25353.6, for the 24 City TSP tour.
 $\\$
 
 \begin{figure}[!htbp]
 \centering
 Figure $\eqref{g_q1_4_9_1}$ is the plot of the TSP of the 24 city tour with no initial Sub-tour constraints. 
- \includegraphics[scale=1.3]{0_city/all_24_with_0} 
+\includegraphics[width=1.35\textwidth,left]{0_city/all_24_with_0} 
 \caption{TSP Tour Plot - 24 City Tour with no initial Sub-tour constraints}
 \label{g_q1_4_9_1}
 \end{figure}
@@ -289,7 +340,7 @@ Figure $\eqref{g_q1_4_9_1}$ is the plot of the TSP of the 24 city tour with no i
 \begin{figure}[!htbp]
 \centering
 Figure $\eqref{g_q1_4_9_2}$ is the plot of the TSP of the 24 city tour with 1-City Sub-tour constraint. 
- \includegraphics[scale=1.3]{1_city/all_24_with_1} 
+ \includegraphics[width=1.29\textwidth,left]{1_city/all_24_with_1} 
 \caption{TSP Tour Plot - 24 City Tour with 1-City initial Sub-tour constraints}
 \label{g_q1_4_9_2}
 \end{figure}
@@ -298,7 +349,7 @@ Figure $\eqref{g_q1_4_9_2}$ is the plot of the TSP of the 24 city tour with 1-Ci
 \begin{figure}[!htbp]
 \centering
 Figure $\eqref{g_q1_4_9_3}$ is the plot of the TSP of the 24 city tour with 2-City Sub-tour constraint. 
- \includegraphics[scale=1.3]{2_city/all_24_with_2} 
+ \includegraphics[width=1.38\textwidth,left]{2_city/all_24_with_2} 
 \caption{TSP Tour Plot - 24 City Tour with 2-City initial Sub-tour constraints}
 \label{g_q1_4_9_3}
 \end{figure}
@@ -308,7 +359,7 @@ Figure $\eqref{g_q1_4_9_3}$ is the plot of the TSP of the 24 city tour with 2-Ci
 \begin{figure}[!htbp]
 \centering
 Figure $\eqref{g_q1_4_9_4}$ is the plot of the TSP of the 24 city tour with 3-City Sub-tour constraint. 
- \includegraphics[scale=1.2]{3_city/all_24_with_3} 
+ \includegraphics[width=1.29\textwidth,left]{3_city/all_24_with_3} 
 \caption{TSP Tour Plot - 24 City Tour with 3-City initial Sub-tour constraints}
 \label{g_q1_4_9_4}
 \end{figure}
@@ -318,7 +369,7 @@ $\\$
 \begin{figure}[!htbp]
 \centering
 Figure $\eqref{g_q1_4_9_5}$ is the plot of the TSP of the 24 city tour with 4-City Sub-tour constraint. 
- \includegraphics[scale=1.35]{4_city/all_24_with_4} 
+ \includegraphics[width=1.37\textwidth,left]{4_city/all_24_with_4} 
 \caption{TSP Tour Plot - 24 City Tour with 4-City initial Sub-tour constraints}
 \label{g_q1_4_9_5}
 \end{figure}
@@ -695,11 +746,25 @@ The following is the source code for $US24TourPlot.m$, for plotting the TSP for 
 \begin{verbatim}
 clear all;
 
+%outputfile = 'US24.output';
 outputfile = 'US24.output';
 f = fopen(outputfile,'r');
 x = fscanf(f, '%d\t %d', [2, inf]);
 fclose(f);
 x = x';
+
+% read the list of cities
+cities = cell(1e6, 2) ;
+citiesfile = 'cities.input';
+f = fopen(citiesfile,'r');
+rCnt = 0 ; 
+while ~feof(f)
+    rCnt = rCnt + 1 ;
+    cities{rCnt,1} = fscanf(f, '%d', 1) ;
+    cities{rCnt,2} = fscanf(f, '%s', 1) ;
+end
+fclose(f);
+cities = cities(1:rCnt-1,:) ;
 
 coordfile = 'US48.input';
 f = fopen(coordfile,'r');
@@ -716,9 +781,14 @@ for k = 1 : 24
 end
 figure(1);
 plot(coord(tour(:,1),2),coord(tour(:,1),3),'rO');
+text(coord(tour(:,1),2),coord(tour(:,1),3),num2str(coord(tour(:,1),1)),'HorizontalAlignment','center','VerticalAlignment','bottom')
+text(coord(tour(:,1),2),coord(tour(:,1),3), cities(tour(:,1),2),'HorizontalAlignment','center','VerticalAlignment','top')
+
+
 hold on;
 plot([coord(tour(:,1),2);coord(1,2)],[coord(tour(:,1),3);coord(1,3)]);
-plot(coord(1,2),coord(1,3),'r*'); % the star marks Atlanta.
+plot(coord(1,2),coord(1,3),'r*'); % the star marks Atlanta
+
 \end{verbatim}
 
 
