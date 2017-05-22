@@ -1,4 +1,4 @@
-Travelling Salesman Problem
+Travelling Salesman Problem - An Optimization Solution
 
 A Dantzig-Fulkerson-Johnson formulation for the solution of the TSP
 
